@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import Scene from './components/Scene.vue';
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <h1>UnMonopoly</h1>
+
+  <Scene />
 </template>
 
 <style scoped>
