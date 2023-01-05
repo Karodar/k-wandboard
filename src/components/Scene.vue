@@ -1,25 +1,16 @@
 <script setup lang="ts">
 import { ref, onMounted } from '@vue/runtime-core';
-import { createScene } from '../core/scene';
+import { DefaultScene } from '../core/scene'
 
-const emit = defineEmits<{
-  (e: 'fps', value: number): void;
-}>();
-
-const bjsCanvas = ref(null);
-const fpsCallback = (fps) => {
-  emit('fps', fps);
-};
+const canvasRef = ref(null);
 
 onMounted(() => {
-  if (bjsCanvas.value) {
-    createScene(bjsCanvas.value, fpsCallback);
-  }
+  new DefaultScene(canvasRef.value)
 });
 </script>
 
 <template>
-  <canvas ref="bjsCanvas" class="scene" />
+  <canvas ref="canvasRef" class="scene" />
 </template>
 
 <style scoped>
