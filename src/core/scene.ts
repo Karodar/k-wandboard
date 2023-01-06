@@ -13,8 +13,8 @@ export class DefaultScene {
   scene: Scene;
   engine: Engine;
 
-  constructor(private canvas: HTMLCanvasElement) {
-    this.engine = new Engine(this.canvas, true);
+  constructor(canvas: HTMLCanvasElement) {
+    this.engine = new Engine(canvas, true);
     this.scene = this.CreateScene();
 
     this.engine.runRenderLoop(() => {
