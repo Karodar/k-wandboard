@@ -2,7 +2,7 @@
 import { ref, onMounted } from '@vue/runtime-core';
 import { DefaultScene } from '../core/scene'
 
-const canvasRef = ref(null);
+const canvasRef = ref(document.createElement('canvas'));
 
 onMounted(() => {
   new DefaultScene(canvasRef.value)
@@ -12,10 +12,3 @@ onMounted(() => {
 <template>
   <canvas ref="canvasRef" class="scene" />
 </template>
-
-<style scoped>
-.scene {
-  width: 86vw;
-  height: 80vh;
-}
-</style>
