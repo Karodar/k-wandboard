@@ -11,9 +11,9 @@ const router = useRouter()
 <template>
   <div class="header">
     <div class="header__section">
-      <Logo />
+      <a href="https://v3.ru.vuejs.org/ru/" target="_blank"><Logo /></a>
       <Plus />
-      <Babylon />
+      <a href="https://www.babylonjs.com/" target="_blank"><Babylon /></a>
     </div>
     <div class="header__section">
       <ButtonDefault @click="router.push({ name: 'index' })">Текстуры</ButtonDefault>
@@ -25,9 +25,14 @@ const router = useRouter()
 
 <style lang="scss" scoped>
 .header {
+  padding: 1.4rem;
   display: flex;
   flex-direction: column;
   gap: .8rem;
+
+  button {
+    width: fit-content;
+  }
 
   svg {
     width: 4rem;
@@ -43,6 +48,23 @@ const router = useRouter()
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 456px) {
+      &:first-child {
+        gap: .4rem;
+      }
+
+      svg {
+        width: 2.8rem;
+        height: 2.8rem;
+
+        &:nth-child(2) {
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+      }
+    }
   }
 }
 </style>

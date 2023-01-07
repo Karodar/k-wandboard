@@ -10,7 +10,7 @@ import HeaderDefault from "@/components/HeaderDefault.vue";
 <style lang="scss" scoped>
 .navbar {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 0;
+  left: 0;
 }
 </style>
