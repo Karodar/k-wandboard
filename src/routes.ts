@@ -1,6 +1,7 @@
 import Scene from "@/components/SceneDefault.vue";
 import SceneSkybox from "@/components/SceneSkybox.vue";
 import NotFound from "@/components/NotFound.vue";
+import SceneModels from "@/components/SceneModels.vue";
 
 export const routes = [
     {
@@ -12,6 +13,11 @@ export const routes = [
         path: '/skybox',
         name: 'skybox',
         component: SceneSkybox
+    },
+    {
+        path: '/models',
+        name: 'models',
+        component: SceneModels
     },
     {
         path: '/:pathMatch(.*)*',

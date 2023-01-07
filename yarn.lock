@@ -1011,6 +1011,11 @@
     "@fortawesome/free-regular-svg-icons" "^6.0.0"
     "@fortawesome/free-solid-svg-icons" "^6.0.0"
 
+"@babylonjs/loaders@^5.41.0":
+  version "5.41.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/loaders/-/loaders-5.41.0.tgz#c7bea5840c1771b1c0fffaf8023292809f084a82"
+  integrity sha512-a4zHmmk26Cn22S3eL+wkY2pRCFB2pLmBNHZ0CTD+Xv0S4Ctdj3HHC1Q+lgO3z7I40uM8jb5xdoG0+uTIwTm+RQ==
+
 "@esbuild/android-arm64@0.16.12":
   version "0.16.12"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.16.12.tgz#86c4fdd7c0d65fe9dcbe138fbe72720658ec3b88"
