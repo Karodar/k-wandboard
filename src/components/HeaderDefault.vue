@@ -19,6 +19,7 @@ const router = useRouter()
       <ButtonDefault @click="router.push({ name: 'index' })">Текстуры</ButtonDefault>
       <ButtonDefault @click="router.push({ name: 'skybox' })">Skybox + Свечение</ButtonDefault>
       <ButtonDefault @click="router.push({ name: 'models' })">Модели</ButtonDefault>
+      <ButtonDefault @click="router.push({ name: 'shadows' })">Свет + тени</ButtonDefault>
     </div>
   </div>
 </template>
