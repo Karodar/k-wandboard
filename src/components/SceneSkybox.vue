@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {onMounted, ref} from 'vue';
-import {DefaultPBR} from "@/core/pbr";
+import { onMounted, ref } from "vue";
+import { DefaultPBR } from "@/core/pbr";
 
-const canvasRef = ref(document.createElement('canvas'));
+const canvasRef = ref(document.createElement("canvas"));
 
 onMounted(() => {
-  new DefaultPBR(canvasRef.value)
+  new DefaultPBR(canvasRef.value);
 });
 </script>
 

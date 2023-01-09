@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Logo from '@/assets/vue.svg?component'
-import Babylon from '@/assets/babylon.svg?component'
-import Plus from '@/assets/plus.svg?component'
+import Logo from "@/assets/vue.svg?component";
+import Babylon from "@/assets/babylon.svg?component";
+import Plus from "@/assets/plus.svg?component";
 import ButtonDefault from "@/components/ButtonDefault.vue";
-import {useRouter} from "vue-router";
+import { useRouter } from "vue-router";
 
-const router = useRouter()
+const router = useRouter();
 </script>
 
 <template>
@@ -16,10 +16,18 @@ const router = useRouter()
       <a href="https://www.babylonjs.com/" target="_blank"><Babylon /></a>
     </div>
     <div class="header__section">
-      <ButtonDefault @click="router.push({ name: 'index' })">Текстуры</ButtonDefault>
-      <ButtonDefault @click="router.push({ name: 'skybox' })">Skybox + Свечение</ButtonDefault>
-      <ButtonDefault @click="router.push({ name: 'models' })">Модели</ButtonDefault>
-      <ButtonDefault @click="router.push({ name: 'shadows' })">Свет + тени</ButtonDefault>
+      <ButtonDefault @click="router.push({ name: 'index' })"
+        >Текстуры</ButtonDefault
+      >
+      <ButtonDefault @click="router.push({ name: 'skybox' })"
+        >Skybox + Свечение</ButtonDefault
+      >
+      <ButtonDefault @click="router.push({ name: 'models' })"
+        >Модели</ButtonDefault
+      >
+      <ButtonDefault @click="router.push({ name: 'shadows' })"
+        >Свет + тени</ButtonDefault
+      >
     </div>
   </div>
 </template>
@@ -29,7 +37,7 @@ const router = useRouter()
   padding: 1.4rem;
   display: flex;
   flex-direction: column;
-  gap: .8rem;
+  gap: 0.8rem;
 
   button {
     width: fit-content;
@@ -53,7 +61,7 @@ const router = useRouter()
 
     @media (max-width: 456px) {
       &:first-child {
-        gap: .4rem;
+        gap: 0.4rem;
       }
 
       svg {

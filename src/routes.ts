@@ -5,29 +5,29 @@ import SceneModels from "@/components/SceneModels.vue";
 import SceneLightRoom from "@/components/SceneLightRoom.vue";
 
 export const routes = [
-    {
-        path: '/',
-        name: 'index',
-        component: Scene,
-    },
-    {
-        path: '/skybox',
-        name: 'skybox',
-        component: SceneSkybox
-    },
-    {
-        path: '/models',
-        name: 'models',
-        component: SceneModels
-    },
-    {
-        path: '/shadows',
-        name: 'shadows',
-        component: SceneLightRoom
-    },
-    {
-        path: '/:pathMatch(.*)*',
-        name: 'not-found',
-        component: NotFound
-    },
-]
+  {
+    path: "/",
+    name: "index",
+    component: Scene,
+  },
+  {
+    path: "/skybox",
+    name: "skybox",
+    component: SceneSkybox,
+  },
+  {
+    path: "/models",
+    name: "models",
+    component: SceneModels,
+  },
+  {
+    path: "/shadows",
+    name: "shadows",
+    component: SceneLightRoom,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "not-found",
+    component: NotFound,
+  },
+];

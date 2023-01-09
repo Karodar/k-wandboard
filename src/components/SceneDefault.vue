@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { DefaultScene } from '@/core/scene'
+import { onMounted, ref } from "vue";
+import { DefaultScene } from "@/core/scene";
 
-const canvasRef = ref(document.createElement('canvas'));
+const canvasRef = ref(document.createElement("canvas"));
 
 onMounted(() => {
-  new DefaultScene(canvasRef.value)
+  new DefaultScene(canvasRef.value);
 });
 </script>
 

@@ -5,6 +5,5 @@
 <style lang="scss" scoped>
 h1 {
   font-size: 7.4rem;
-
 }
 </style>

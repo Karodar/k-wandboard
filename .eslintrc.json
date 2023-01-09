@@ -4,7 +4,7 @@
   },
   "parser": "vue-eslint-parser",
   "parserOptions": {
-    "parser": "@babel/eslint-parser",
+    "parser": "@typescript-eslint/parser",
     "sourceType": "module"
   },
   "extends": [
@@ -15,6 +15,6 @@
   "rules": {
     // override/add rules settings here, such as:
     // 'vue/no-unused-vars': 'error'
-    "no-unused-vars": [1, { "ignoreRestSiblings": true }]
+    "no-unused-vars": "off"
   }
 }
