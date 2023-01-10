@@ -5,37 +5,35 @@ import gsap from "gsap";
 const props = withDefaults(
   defineProps<{
     percent: number;
-    speed: number
+    tweenBoost?: number;
   }>(),
-  { percent: 0, speed: 500 }
+  { percent: 0, tweenBoost: .3 }
 );
-const tweneedPercent = ref(0);
+const tweenPercent = ref(0);
+const tween = gsap.to(tweenPercent, { duration: 15, value: 100 })
+const isLoaded = computed<boolean>(() => props.percent === 100);
+const isTweenLoaded = computed<boolean>(() => tweenPercent.value === 100);
 
 watch(
-  () => props.percent,
+  isLoaded,
   (value) => {
-    console.log('WATCH::', value)
-    gsap.to(tweneedPercent, { duration: props.speed / 1000, value });
+    if (value) {
+      tween.duration(props.tweenBoost)
+    }
   },
   {
     immediate: true,
   }
-);
-
-const isCompleted = computed(
-  () => tweneedPercent.value === 100
 );
 </script>
 
 <template>
   <Teleport to="#app">
     <Transition name="fade">
-      <div v-if="!isCompleted" class="loading">
+      <div v-if="!isTweenLoaded" class="loading">
         <div class="loading__shape">
           <div class="loading__loader">
-            <span class="loading__percent"
-              >{{ tweneedPercent.toFixed() }}%</span
-            >
+            <span class="loading__percent">{{ tweenPercent.toFixed() }}%</span>
           </div>
         </div>
         <div class="loading__backdrop"></div>
