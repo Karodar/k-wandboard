@@ -13,6 +13,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <LoadingDefault :percent="percentLoading" :tween-boost="2" />
+  <LoadingDefault :percent="percentLoading" :tween-boost="3" />
   <canvas ref="canvasRef" class="scene" />
 </template>
