@@ -2,7 +2,6 @@ import {
   Engine,
   FreeCamera,
   HemisphericLight,
-  ISceneLoaderProgressEvent,
   MeshBuilder,
   Scene,
   StandardMaterial,
@@ -14,10 +13,7 @@ export class DefaultScene {
   scene: Scene;
   engine: Engine;
 
-  constructor(
-    private canvas: HTMLCanvasElement,
-    private onProgress: (event: ISceneLoaderProgressEvent) => void
-  ) {
+  constructor(private canvas: HTMLCanvasElement) {
     this.engine = new Engine(this.canvas, true);
     this.scene = this.CreateScene();
 

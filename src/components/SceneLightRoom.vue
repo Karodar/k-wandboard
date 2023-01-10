@@ -5,10 +5,18 @@ import LoadingDefault from "@/components/LoadingDefault.vue";
 import {ISceneLoaderProgressEvent} from "@babylonjs/core";
 
 const canvasRef = ref<HTMLCanvasElement>();
-const percentLoading = ref<number>(0);
+const percentLoading = ref<number>(1);
+const speedTween = ref<number>()
 
 const onProgress = ({ loaded, total }: ISceneLoaderProgressEvent) => {
-  percentLoading.value = Number(((loaded * 100) / total).toFixed());
+  const currentPercent = Number(((loaded * 100) / total).toFixed())
+
+  if (currentPercent > 90) {
+    speedTween.value = 1800
+    percentLoading.value = 100
+  }
+
+  percentLoading.value = currentPercent;
 };
 
 onMounted(() => {
@@ -17,6 +25,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <LoadingDefault :percent="percentLoading" />
+  <LoadingDefault :percent="percentLoading" :speed="speedTween" />
   <canvas ref="canvasRef" class="scene" />
 </template>

@@ -1,23 +1,41 @@
 <script setup lang="ts">
-import {computed, defineProps, withDefaults} from "vue";
+import {computed, defineProps, ref, watch, withDefaults} from "vue";
+import gsap from "gsap";
 
 const props = withDefaults(
   defineProps<{
     percent: number;
+    speed: number
   }>(),
-  { percent: 0 }
+  { percent: 0, speed: 500 }
+);
+const tweneedPercent = ref(0);
+
+watch(
+  () => props.percent,
+  (value) => {
+    console.log('WATCH::', value)
+    gsap.to(tweneedPercent, { duration: props.speed / 1000, value });
+  },
+  {
+    immediate: true,
+  }
 );
 
-const isLoaded = computed(() => props.percent > 99);
+const isCompleted = computed(
+  () => tweneedPercent.value === 100
+);
 </script>
 
 <template>
   <Teleport to="#app">
     <Transition name="fade">
-      <div v-if="!isLoaded" class="loading">
+      <div v-if="!isCompleted" class="loading">
         <div class="loading__shape">
           <div class="loading__loader">
-            <span class="loading__percent">{{ props.percent }}%</span>
+            <span class="loading__percent"
+              >{{ tweneedPercent.toFixed() }}%</span
+            >
           </div>
         </div>
         <div class="loading__backdrop"></div>
@@ -89,8 +107,10 @@ const isLoaded = computed(() => props.percent > 99);
 
   &__percent {
     position: relative;
-    left: .6rem;
+    left: 0.6rem;
     font-size: 5rem;
+    font-weight: 300;
+    color: #ffffff;
   }
 }
 

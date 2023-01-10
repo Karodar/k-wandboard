@@ -13,6 +13,7 @@
     "@babylonjs/inspector": "^5.40.0",
     "@babylonjs/loaders": "^5.41.0",
     "babylonjs-gui": "^5.40.0",
+    "gsap": "^3.11.4",
     "vue": "^3.2.45",
     "vue-router": "4"
   },
