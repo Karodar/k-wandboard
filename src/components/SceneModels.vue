@@ -9,6 +9,9 @@ const percentLoading = ref<number>(1);
 const speedTween = ref<number>()
 
 const onProgress = ({ loaded, total }: ISceneLoaderProgressEvent) => {
+  if (Number(loaded) === 0 || Number(total) === 0) {
+    return
+  }
   const currentPercent = Number(((loaded * 100) / total).toFixed())
 
   if (currentPercent > 50) {
