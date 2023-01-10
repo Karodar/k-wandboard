@@ -9,6 +9,7 @@ const percentLoading = ref<number>(1);
 const speedTween = ref<number>()
 
 const onProgress = ({ loaded, total }: ISceneLoaderProgressEvent) => {
+  console.log('DOWNLOADING::', loaded, total);
   const currentPercent = Number(((loaded * 100) / total).toFixed())
 
   if (currentPercent > 90) {
